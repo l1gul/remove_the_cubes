@@ -1,8 +1,8 @@
 var points = 0;
 var currentCubs = 0;
 var myTimer;
-$("#number_points").html(points);
-var players_results = JSON.parse(localStorage.getItem('players_results') || "{}")
+$("#numberPoints").html(points);
+var players_results = JSON.parse(localStorage.getItem('playersResults') || "{}")
 var colorsPointsMap = {
     "green": 3,
     "red": -1,
@@ -36,16 +36,16 @@ var colors = Object.keys(colorsPointsMap);
 
 var maxCubes = 112;
 var timerState = 0;
-var startTime = 2;
+var startTime = 59;
 var time = startTime;
 var timerButton = $('#timerButton');
 var startId = 1;
 var countClickOnCubes = {};
 var addResult = function (name, points) {
-    $('#result_container').append(
-        "<div><span id='name_val'>"
+    $('#resultContainer').append(
+        "<div><span id='nameVal'>"
         + name + ": "
-        + "</span><span id='points_val'>"
+        + "</span><span id='pointsVal'>"
         + points
         + "</span></div>"
     )
@@ -61,7 +61,7 @@ var addCubes = function (countCubes) {
     for (var i = 0; i < countCubes; i++) {
         var randomSize = cubeSize[getRandomIntInclusive(0, cubeSize.length - 1)];
         var randomColor = colors[getRandomIntInclusive(0, colors.length - 1)];
-        $('.wrapper_game_field').append("<div id=" + startId + " onclick=\"onCubeClick(this,'" + randomColor + "','"
+        $('.wrapperGameField').append("<div id=" + startId + " onclick=\"onCubeClick(this,'" + randomColor + "','"
             + randomSize + "')\" class='cube " + randomColor + " " + randomSize + "'></div>");
         startId += 1;
     }
@@ -87,9 +87,9 @@ $('#timerButton').click(function () {
             time--;
             if (--timer < 0) {
                 timer = 0;
-                $(".modal_wrapper").addClass("active");
-                $("#number_points_modal").html(points);
-                $(".modal_wrapper").removeClass("close_modal");
+                $(".modalWrapper").addClass("active");
+                $("#numberPointsModal").html(points);
+                $(".modalWrapper").removeClass("closeModal");
             }
         }, 1000);
     }
@@ -106,7 +106,7 @@ $('#timerButton').click(function () {
         clearInterval(myTimer);
         timerButton.html("START");
         timerState = -1;
-        $('.wrapper_game_field').append('<div class="pauseOverlay">PAUSE</div>');
+        $('.wrapperGameField').append('<div class="pauseOverlay">PAUSE</div>');
     }
     else {
         startTimer(time, timerElement);
@@ -124,28 +124,28 @@ $('#newGameButton').click(function () {
         clearInterval(myTimer);
     }
     time = startTime;
-    $('.wrapper_game_field').html("");
+    $('.wrapperGameField').html("");
     $('#timer').html("01:00");
-    $('#number_points').html("0");
+    $('#numberPoints').html("0");
     timerState = 0;
     currentCubs = 0;
     timerButton.html("START");
     countClickOnCubes = {};
 });
 
-$('.btn_modal').on('click', function () {
-    $(".modal_wrapper").addClass("close_modal");
-    $(".modal_wrapper").removeClass('active');
-    var value_player = $('#value_player').val();
+$('.btnModal').on('click', function () {
+    $(".modalWrapper").addClass("closeModal");
+    $(".modalWrapper").removeClass('active');
+    var value_player = $('#valuePlayer').val();
     console.log(value_player);
     addResult(value_player, points);
     players_results[value_player] = points;
-    localStorage.setItem('players_results', JSON.stringify(players_results));
+    localStorage.setItem('playersResults', JSON.stringify(players_results));
     $('#timerButton').attr('disabled', 'disable');
     clearInterval(myTimer);
     points = 0;
-    $("#number_points_modal").html("");
-    $("#value_player").val("");
+    $("#numberPointsModal").html("");
+    $("#valuePlayer").val("");
 });
 
 var onCubeClick = function (element, color, size) {
@@ -160,7 +160,7 @@ var onCubeClick = function (element, color, size) {
         currentCubs -= 1;
         if ((currentCubs + addColCubes) < maxCubes) {
             points += colorsPointsMap[color] + sizePointsMap[size];
-            $("#number_points").html(points);
+            $("#numberPoints").html(points);
             addCubes(addColCubes);
             currentCubs += addColCubes;
         }
