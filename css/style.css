@@ -1,0 +1,244 @@
+header {
+    margin-top: 20px;
+    margin-left: 20px;
+}
+
+h1 {
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 40px;
+}
+
+.wrapper_content {
+    margin-left: 20px;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    display: flex;
+}
+
+.wrapper_game_field {
+    border: 1px solid #000;
+    width: 702px;
+    height: 402px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.wrapper_cube {
+    width: 50px;
+    height: 50px;
+}
+
+.wrapper_stat_header {
+    display: flex;
+    margin-top: 20px;
+    width: 970px;
+}
+
+.wrapper_result_table {
+    width: 250px;
+    height: 400px;
+    border: 1px solid #000;
+    margin-left: 20px;
+}
+
+.btn_pause {
+    margin: 0 20px;
+}
+
+.points_wrapper {
+    margin: 0 50px;
+}
+
+.points {
+    width: 80px;
+    display: block;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    border: 1px solid #000;
+    padding: 5px 5px;
+}
+
+.time {
+    width: 100px;
+    display: block;
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    border: 1px solid #000;
+    padding: 5px 5px;
+}
+
+.heading_result {
+    font-size: 32px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.cube {
+    border: 1px dashed #fff;
+}
+
+.red {
+    background-color: red;
+}
+
+.blue {
+    background-color: blue;
+}
+
+.green {
+    background-color: green;
+}
+
+.yellow {
+    background-color: yellow;
+}
+
+.black {
+    background-color: black;
+}
+
+.darkgray {
+    background-color: darkgray;
+}
+
+.darkslateblue {
+    background-color: darkslateblue;
+}
+
+.deeppink {
+    background-color: deeppink;
+}
+
+.khaki {
+    background-color: khaki;
+}
+
+.lawngreen {
+    background-color: lawngreen;
+}
+
+.lightseagreen {
+    background-color: lightseagreen;
+}
+
+.maroon {
+    background-color: maroon;
+}
+
+.orange {
+    background-color: orange;
+}
+
+.purple {
+    background-color: purple;
+}
+
+.inactive {
+    display: none;
+}
+
+.modal_wrapper {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-align: center;
+    background: #000000a6;
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+.wrapper_name_modal {
+    display: flex;
+}
+
+.my_modal {
+    width: 20%;
+    margin: 10% 40% 0;
+    text-align: center;
+    background: #fff;
+    height: 200px;
+    padding: 1%;
+    position: relative;
+    border-radius: 20px;
+}
+
+.final_score {
+    text-align: left;
+    margin: 7% 0;
+    font-size: 24px;
+}
+
+.btn_modal {
+    position: absolute;
+    bottom: 10%;
+    left: 40%;
+    width: 20%;
+}
+
+.name_player {
+    margin-right: 5%;
+    font-size: 24px;
+}
+
+#str {
+    font-size: 18px;
+    padding: 0 5%;
+}
+
+.close_modal {
+    display: none !important;
+}
+
+#name_val {
+    font-size: 26px;
+    width: 50%;
+    display: inline-block;
+    padding-left: 10px;
+}
+
+#points_val {
+    font-size: 26px;
+    margin-left: 5px;
+    width: 44%;
+    display: inline-block;
+    text-align: right;
+}
+
+#timerButton {
+    margin-right: 20px;
+}
+
+.small {
+    height: 15px;
+    width: 15px;
+}
+
+.medium {
+    height: 30px;
+    width: 30px;
+}
+
+.large {
+    height: 50px;
+    width: 50px;
+}
+
+.pauseOverlay {
+    width: 702px;
+    height: 402px;
+    background-color: #00000094;
+    position: absolute;
+    color: #fff;
+    display: flex;
+    font-size: 46px;
+    justify-content: center;
+    align-items: center;
+}
