@@ -5,8 +5,8 @@ $("#numberPoints").html(points);
 var playersResults = JSON.parse(localStorage.getItem('playersResults') || "{}")
 var colorsPointsMap = {
     "green": 3,
-    "red": -1,
-    "black": -3,
+    "red": -5,
+    "black": -10,
     "yellow": 1,
     "blue": 2
 };
