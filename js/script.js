@@ -2,7 +2,7 @@ var points = 0;
 var currentCubs = 0;
 var myTimer;
 $("#numberPoints").html(points);
-var players_results = JSON.parse(localStorage.getItem('playersResults') || "{}")
+var playersResults = JSON.parse(localStorage.getItem('playersResults') || "{}")
 var colorsPointsMap = {
     "green": 3,
     "red": -1,
@@ -54,8 +54,8 @@ var addResult = function (name, points) {
 
 var cubeSize = Object.keys(sizePointsMap);
 $('#timerButton').attr('disabled', 'disable');
-for (var i in players_results) {
-    addResult(i, players_results[i]);
+for (var i in playersResults) {
+    addResult(i, playersResults[i]);
 }
 var addCubes = function (countCubes) {
     for (var i = 0; i < countCubes; i++) {
@@ -136,11 +136,11 @@ $('#newGameButton').click(function () {
 $('.btnModal').on('click', function () {
     $(".modalWrapper").addClass("closeModal");
     $(".modalWrapper").removeClass('active');
-    var value_player = $('#valuePlayer').val();
-    console.log(value_player);
-    addResult(value_player, points);
-    players_results[value_player] = points;
-    localStorage.setItem('playersResults', JSON.stringify(players_results));
+    var valuePlayer = $('#valuePlayer').val();
+    console.log(valuePlayer);
+    addResult(valuePlayer, points);
+    playersResults[valuePlayer] = points;
+    localStorage.setItem('playersResults', JSON.stringify(playersResults));
     $('#timerButton').attr('disabled', 'disable');
     clearInterval(myTimer);
     points = 0;
